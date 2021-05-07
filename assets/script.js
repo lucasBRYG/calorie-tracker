@@ -28,3 +28,11 @@ const workoutCard = `
          </form>
     </div>
 `
+
+$(mealCardButton).on("click", () => {
+    document.append();
+})
+
+exerciseCardButton.on("click", () => {
+    document.append(workoutCard)
+})
