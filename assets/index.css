@@ -21,3 +21,17 @@ section {
 .section-header {
     width: 100%
 }
+
+.workout__form {
+    width: 200px;
+    height: 200px;
+
+    background-color: cadetblue;
+}
+
+.meal__form {
+    width: 200px;
+    height: 250px;
+
+    background-color: cadetblue;
+}
