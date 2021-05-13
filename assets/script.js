@@ -1,13 +1,12 @@
 const mealForm = $(".meal__form");
 const exerciseForm = $(".workout__form");
 
-console.log("test1");
-
-$(mealForm).on("submit", () => {
+$("#meal-submit").on("click", () => {
     let meal = $("#meal").val();
     let calories = $("#meal__calories").val();
 
-    console.log("test");
+    console.log(meal + " " + calories);
+    console.log("test2");
 
     const mealCard = `
         <div class = "meal__card">
@@ -16,5 +15,5 @@ $(mealForm).on("submit", () => {
             <p>${calories}</p>
         </div>
     `
-    $(".excersize-cards").append(mealCard);
+    $("#meal-cards").append(mealCard);
 })
