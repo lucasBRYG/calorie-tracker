@@ -15,6 +15,7 @@ header {
 
 section {
     width: 100%;
+
     text-align: center;
 }
 
@@ -34,4 +35,45 @@ section {
     height: 200px;
 
     background-color: cadetblue;
+}
+
+.container {
+    height: 250px;
+
+    display: grid;
+    grid-template-columns: auto 210px;
+    align-items: center;
+}
+
+.cards_section {
+
+    padding: 0 20px;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.card {
+    width: 160px;
+    height: 200px;
+
+    background-color: cadetblue;
+    border-radius: 10px;
+    box-shadow: -1rem 0 3rem gray;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.card:not(:last-child) {
+    margin-right: -60px;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.card:hover~.card {
+    z-index: top;
 }
