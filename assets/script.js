@@ -2,7 +2,6 @@ const mealForm = $(".meal__form");
 const exerciseForm = $(".workout__form");
 
 $(document).ready(() => {
-    console.log("ready!");
 
     if(localStorage.getItem("week")) {
 
@@ -32,7 +31,7 @@ $(document).ready(() => {
 
 });
 
-$("#meal-submit").on("click", () => {
+$("#meal-submit").click(() => {
     let meal = $("#meal").val();
     let calories = $("#meal__calories").val();
 
@@ -41,9 +40,13 @@ $("#meal-submit").on("click", () => {
     $("#meal-cards").append(createCard(meal, calories, "meal"));
     setDayCalLS(calories);
     setDayMeals({meal: meal, calories: calories});
+
+    $(".delete-button").click((event) => {
+        console.log(event.target.parentNode.parentNode)
+    });
 });
 
-$("#workout-submit").on("click", () => {
+$("#workout-submit").click(() => {
     let workout = $("#workout").val();
     let calories = 0;
     calories -= $("#workout__calories").val()
@@ -53,6 +56,10 @@ $("#workout-submit").on("click", () => {
     $("#workout-cards").append(createCard(workout, calories, "workout"));
     setDayCalLS(calories);
     setDayWorkouts({workout: workout, calories: calories});
+
+    $(".delete-button").click((event) => {
+        console.log(event.target.parentNode.parentNode)
+    });
 });
 
 function createCard(title, value, id) {
@@ -62,6 +69,7 @@ function createCard(title, value, id) {
             <h4>${title}</h4>
             <h5>Calories</h5>
             <p>${value}</p>
+            <button class = "delete-button">Delete</button>
         </div>
     `;
 }
@@ -76,11 +84,8 @@ function setDayCalLS(newCals) {
 
 function setDayWorkouts(workout) {
     let workouts = JSON.parse(localStorage.getItem("day-workouts"));
-    console.log(workouts);
     workouts.push(workout);
-    console.log(workouts);
     localStorage.setItem("day-workouts", JSON.stringify(workouts));
-    console.log(localStorage.getItem("day-workouts"));
 }
 
 function setDayMeals(meal) {
