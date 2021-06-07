@@ -5,7 +5,7 @@ const weekNetEl = $("#week-net");
 
 $(document).ready(() => {
 
-    if(localStorage.getItem("week")) {
+    if(localStorage.getItem("goal")) {
 
         if(localStorage.getItem("day") != new Date().getDate()) {
             localStorage.setItem("day", new Date().getDate());
@@ -22,8 +22,7 @@ $(document).ready(() => {
         }
 
         todayNetEl.html(`${JSON.parse(localStorage.getItem("day-calories")).calories-JSON.parse(localStorage.getItem("goal"))}`);
-        weekNetEl.html(`${JSON.parse(localStorage.getItem("week-calories")).calories}`);
-
+        renderCards();
 
     } else {
         const goal = prompt("Enter your daily calorie intake goal:");
@@ -38,7 +37,7 @@ $(document).ready(() => {
         localStorage.setItem("day-workouts", "[]");
 
         todayNetEl.html(`${JSON.parse(localStorage.getItem("day-calories")).calories}`);
-        weekNetEl.html(`${JSON.parse(localStorage.getItem("week-calories")).calories}`);
+        
     }
 
 });
@@ -46,10 +45,16 @@ $(document).ready(() => {
 
 $("#meal-submit").click(() => {
     let mel = $("#meal").val();
-    let calories = $("#meal__calories").val();
+    let calories;
+    if ($("#meal__calories").val() != '') {
+        calories = $("#meal__calories").val();
+    } else {
+        calories = 0;
+    }
 
     $("#meal-cards").append(createCard(mel, calories, "meal"));
     setDayCalLS(calories);
+
     setDayMeals({meal: mel, calories: calories});
     renderUpdate();
 });
@@ -57,10 +62,13 @@ $("#meal-submit").click(() => {
 $("#workout-submit").click(() => {
     let wrkt = $("#workout").val();
     let calories = 0;
-    calories -= $("#workout__calories").val();
+    if ($("#workout__calories").val() != null) {
+        calories -= $("#workout__calories").val();
+    }
 
     $("#workout-cards").append(createCard(wrkt, calories, "workout"));
     setDayCalLS(calories);
+
     setDayWorkouts({workout: wrkt, calories: calories});
     renderUpdate();
 });
@@ -110,6 +118,7 @@ function deleteButton(e, i) { // e will be a js event object.
 
     let targetIndex = tpChildren.indexOf(target);
     setDayCalLS(-arrayLocal[targetIndex].calories);
+
     arrayLocal.splice(targetIndex, 1);
     localStorage.setItem(`day-${targetType}s`, JSON.stringify(arrayLocal ));
     target.remove();
@@ -119,8 +128,19 @@ function deleteButton(e, i) { // e will be a js event object.
 function renderUpdate() {
 
     todayNetEl.html(`${JSON.parse(localStorage.getItem("day-calories")).calories-JSON.parse(localStorage.getItem("goal"))}`);
-    weekNetEl.html(`${JSON.parse(localStorage.getItem("week-calories")).calories}`);
+}
 
+function renderCards() {
+    let meals = JSON.parse(localStorage.getItem("day-meals"));
+    let workouts = JSON.parse(localStorage.getItem("day-workouts"));
+
+    meals.forEach(meal => {
+        $("#meal-cards").append(createCard(meal.meal, meal.calories, "meal"));
+    });
+    workouts.forEach(workout => {
+        $("#workout-cards").append(createCard(workout.workout, workout.calories, "workout"));
+    })
+    renderUpdate();
 }
 
 // function testCards() {
