@@ -46,13 +46,13 @@ This application was made using HTML5, CSS3, ES6 JavaScript, and jQuery for acce
 
 ## Screenshots
 ### Full page
-![Full page view of application] (./assets/images/Screenshot 2021-06-07 130224.png)
+![Full page view of application] (./assets/images/Screenshot2021-06-07130224.png)
 
 ### Meal Section
-![View of meal section] (./assets/images/Screenshot 2021-06-07 130139.png)
+![View of meal section] (./assets/images/Screenshot2021-06-07130139.png)
 
 ### Net Calories
-![View of net calories tracker] (./assets/images/Screenshot 2021-06-07 130245.png)
+![View of net calories tracker] (./assets/images/Screenshot2021-06-07130245.png)
 
 ## Author
  Lucas Santiago
