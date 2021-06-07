@@ -14,7 +14,7 @@ Spring started 3 days ago, wich means the need for summer bods are around the co
 ---
 
 ## Description
-Building a simple calorie tracker, mostly for myself but should be a good little project
+Building a simple calorie tracker, mostly for myself but should be a good little project. Try it out here: https://lucasbryg.github.io/calorie-tracker/
 
 ### MVP
 This is a very simple application, intended for personal use(at first). Soon I want to build in some more functinality like a progress bar, and tracking calorie intake over weeks. For now though, here's what I want it to do:
