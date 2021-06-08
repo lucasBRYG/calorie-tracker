@@ -78,8 +78,7 @@ function createCard(title, value, id) {
     return `
         <div class="${id}__card card" data-type="${id}">
             <h4>${title}</h4>
-            <h5>Calories</h5>
-            <p>${value}</p>
+            <p class="card-calorie-section">Calories: <span>${value}</span></p>
             <button class = "delete-button" onClick="deleteButton(event)">Delete</button>
         </div>
     `;
