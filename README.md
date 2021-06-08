@@ -46,13 +46,13 @@ This application was made using HTML5, CSS3, ES6 JavaScript, and jQuery for acce
 
 ## Screenshots
 ### Full page
-![Full page view of application] (https://github.com/lucasBRYG/calorie-tracker/blob/main/assets/images/Screenshot%202021-06-07%20130224.png)
+![Full page view of application](https://github.com/lucasBRYG/calorie-tracker/blob/main/assets/images/Screenshot%202021-06-07%20130224.png)
 
 ### Meal Section
-![View of meal section] (https://github.com/lucasBRYG/calorie-tracker/blob/main/assets/images/Screenshot%202021-06-07%20130139.png)
+![View of meal section](https://github.com/lucasBRYG/calorie-tracker/blob/main/assets/images/Screenshot%202021-06-07%20130139.png)
 
 ### Net Calories
-![View of net calories tracker] (https://github.com/lucasBRYG/calorie-tracker/blob/main/assets/images/Screenshot%202021-06-07%20130245.png)
+![View of net calories tracker](https://github.com/lucasBRYG/calorie-tracker/blob/main/assets/images/Screenshot%202021-06-07%20130245.png)
 
 ## Author
  Lucas Santiago
