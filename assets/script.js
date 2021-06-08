@@ -2,6 +2,7 @@ const mealForm = $(".meal__form");
 const exerciseForm = $(".workout__form");
 const todayNetEl = $("#today-net");
 const weekNetEl = $("#week-net");
+const progressCirlce = $(".progress");
 
 $(document).ready(() => {
 
@@ -37,6 +38,7 @@ $(document).ready(() => {
         localStorage.setItem("day-workouts", "[]");
 
         todayNetEl.html(`${JSON.parse(localStorage.getItem("day-calories")).calories}`);
+        renderCaloriesBurned();
         
     }
 
@@ -127,6 +129,8 @@ function deleteButton(e, i) { // e will be a js event object.
 function renderUpdate() {
 
     todayNetEl.html(`${JSON.parse(localStorage.getItem("day-calories")).calories-JSON.parse(localStorage.getItem("goal"))}`);
+    renderCaloriesBurned();
+    progressBarLogic();
 }
 
 function renderCards() {
@@ -140,6 +144,34 @@ function renderCards() {
         $("#workout-cards").append(createCard(workout.workout, workout.calories, "workout"));
     })
     renderUpdate();
+}
+
+function renderCaloriesBurned() {
+    let calsBurned = 0;
+    let workouts = JSON.parse(localStorage.getItem("day-workouts"));
+    workouts.forEach(workout => {
+        calsBurned += -workout.calories;
+    });
+
+    $("#calories-burned-val").html(calsBurned);
+}
+
+function progressBarLogic() {
+    let circumference = 440;
+    let caloriesMax = JSON.parse(localStorage.getItem("goal"));
+    let currentCals = 0;
+    let meals = JSON.parse(localStorage.getItem("day-meals"));
+    console.log();
+    meals.forEach(meal => {
+        currentCals += parseInt(meal.calories);
+        console.log(currentCals);
+    });
+    console.log((currentCals/caloriesMax)*circumference);
+    $(progressCirlce).css(`stroke-dashoffset`, `${(currentCals/caloriesMax)*circumference}px`);
+    $(".progress-lable").html(`${currentCals}/`
+    + `${caloriesMax}`);
+
+
 }
 
 // function testCards() {

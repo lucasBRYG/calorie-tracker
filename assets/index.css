@@ -6,21 +6,31 @@
 }
 
 body {
-    width: 95vw;
+    width: 100%;
     display: flex;
     justify-content: center;
     flex-direction: column;
 }
 
 header {
-    width: 100%;
+    width: 100vw;
+/* 
     padding: 15px;
+*/
+    padding: 10px 0;
 
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: center; 
 }
 
+#page-logo {
+    margin: 0 0 0 15px;
+}
+
+#LS-logo {
+    margin: 0 15px 0 0;
+}
 section {
     width: 100%;
 
@@ -29,15 +39,6 @@ section {
 
 .section-header {
     width: 100%
-}
-
-.workout__form {
-    width: 180px;
-    height: 120px;
-
-    background-color: rgb(92, 147, 230);
-
-    border-radius: 10px;
 }
 
 .meal__form {
@@ -49,11 +50,50 @@ section {
     border-radius: 10px;
 }
 
+.track {
+    stroke: lightblue;
+    fill: none;
+}
+
+.progress {
+    stroke: lightcoral;
+    stroke-width: 6px;
+    stroke-dasharray: 440px;
+    stroke-dashoffset: 0;
+    stroke-linecap: round;
+    fill: none;
+}
+
+.progress-lable {
+    height: 30px;
+    position: relative;
+    top: -95px;
+    bottom: 0;
+    left: -10px;
+    right: 0;
+}
+
+.workout__form {
+    width: 180px;
+    height: 120px;
+
+    background-color: rgb(92, 147, 230);
+
+    border-radius: 10px;
+}
+
+#calories-burned-val {
+
+    font-size: 25px;
+    font-weight: 100;
+    color: rgba(0, 221, 18, 0.795)
+}
+
 .container {
     height: 200px;
 
     display: grid;
-    grid-template-columns: auto 200px;
+    grid-template-columns: auto 200px 170px;
     align-items: center;
 }
 
