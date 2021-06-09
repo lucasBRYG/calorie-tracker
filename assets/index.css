@@ -56,12 +56,29 @@ section {
 }
 
 .progress {
-    stroke: lightcoral;
+    stroke: #00dd12cb;
     stroke-width: 6px;
     stroke-dasharray: 440px;
-    stroke-dashoffset: 0;
+    stroke-dashoffset: 440;
     stroke-linecap: round;
     fill: none;
+    
+    transform: rotateZ(-90deg);
+    transform-origin: center;
+    transition: .5s;
+}
+
+.over-progress {
+    stroke: coral;
+    stroke-width: 6px;
+    stroke-dasharray: 440px;
+    stroke-dashoffset: 440;
+    stroke-linecap: round;
+    fill: none;
+    
+    transform: rotateZ(-90deg);
+    transform-origin: center;
+    transition: .5s;
 }
 
 .progress-lable {
@@ -69,7 +86,7 @@ section {
     position: relative;
     top: -95px;
     bottom: 0;
-    left: -10px;
+    left: 0;
     right: 0;
 }
 
@@ -86,7 +103,7 @@ section {
 
     font-size: 25px;
     font-weight: 100;
-    color: rgba(0, 221, 18, 0.795)
+    color: #00dd12cb
 }
 
 .container {
@@ -112,7 +129,7 @@ section {
 
     background-color: rgb(92, 147, 230);
     border-radius: 10px;
-    box-shadow: -1rem 0 3rem gray;
+    box-shadow: -1rem 0 3rem rgba(63, 63, 63, 0.692);
 
     display: flex;
     flex-direction: column;

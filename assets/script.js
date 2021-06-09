@@ -3,6 +3,7 @@ const exerciseForm = $(".workout__form");
 const todayNetEl = $("#today-net");
 const weekNetEl = $("#week-net");
 const progressCirlce = $(".progress");
+const overCircle = $(".over-progress")
 
 $(document).ready(() => {
 
@@ -160,27 +161,20 @@ function progressBarLogic() {
     let circumference = 440;
     let caloriesMax = JSON.parse(localStorage.getItem("goal"));
     let currentCals = 0;
+    let over = 0;
     let meals = JSON.parse(localStorage.getItem("day-meals"));
-    console.log();
     meals.forEach(meal => {
         currentCals += parseInt(meal.calories);
-        console.log(currentCals);
     });
-    console.log((currentCals/caloriesMax)*circumference);
-    $(progressCirlce).css(`stroke-dashoffset`, `${(currentCals/caloriesMax)*circumference}px`);
-    $(".progress-lable").html(`${currentCals}/`
-    + `${caloriesMax}`);
-
+    if ((currentCals/caloriesMax)*circumference > circumference) {
+        over = ((currentCals/caloriesMax)*circumference)-circumference;
+        if (over > circumference) {
+            over = circumference;
+        }
+    }
+    $(progressCirlce).css(`stroke-dashoffset`, `${circumference-((currentCals/caloriesMax)*circumference)+over}px`);
+    $(".progress-lable").html(`${currentCals}/${caloriesMax}`);
+    over = 
+    $(overCircle).css(`stroke-dashoffset`, `${circumference-over}`);
 
 }
-
-// function testCards() {
-//     $("#meal-cards").append(createCard("Apple", 80, "meal"));
-//     $("#meal-cards").append(createCard("Apple", 80, "meal"));
-//     $("#meal-cards").append(createCard("Apple", 80, "meal"));
-//     $("#meal-cards").append(createCard("Apple", 80, "meal"));
-//     $("#meal-cards").append(createCard("Sando", 4200, "meal"));
-//     $("#workout-cards").append(createCard("Mile Run", 120, "workout"));
-// }
-
-// testCards();
