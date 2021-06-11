@@ -90,7 +90,7 @@ section {
 .progress-lable {
     height: 30px;
     position: relative;
-    top: -95px;
+    top: -85px;
     bottom: 0;
     left: 0;
     right: 0;
@@ -160,7 +160,7 @@ section {
     background-color: rgba(240, 128, 128, 0.815);
 }
 
-.card:not(:last-child) {
+.card:not(:last-child) {   /* this is selecting every child that isn't the first one and pulling them to the right so they are overlapping */
     margin-right: -60px;
 }
 
