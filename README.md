@@ -64,10 +64,10 @@ This application was made using HTML5, CSS3, ES6 JavaScript, and jQuery for acce
 ![View of net calories tracker](https://github.com/lucasBRYG/calorie-tracker/blob/main/assets/images/Screenshot%202021-06-07%20130245.png)
 
 ### Progress Wheel
-![View of progress wheel](https://github.com/lucasBRYG/calorie-tracker/blob/main/assets/images/progress-wheel.png)
+![View of progress wheel](https://github.com/lucasBRYG/calorie-tracker/blob/main/assets/images/progress%20wheel.png.png)
 
 ### Over Wheel
-![View of over-progress wheel](https://github.com/lucasBRYG/calorie-tracker/blob/main/assets/images/over-wheel.png)
+![View of over-progress wheel](https://github.com/lucasBRYG/calorie-tracker/blob/main/assets/images/over%20wheel.png)
 
 ---
 
